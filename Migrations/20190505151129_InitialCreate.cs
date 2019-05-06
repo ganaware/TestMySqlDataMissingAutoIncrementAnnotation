@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TestMySqlDataMissingAutoIncrementAnnotation.Migrations
 {
@@ -12,6 +13,7 @@ namespace TestMySqlDataMissingAutoIncrementAnnotation.Migrations
                 {
                     Baz_Data = table.Column<int>(nullable: false),
                     BarId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 },
                 constraints: table =>
                 {
@@ -23,7 +25,7 @@ namespace TestMySqlDataMissingAutoIncrementAnnotation.Migrations
                 columns: table => new
                 {
                     FooId = table.Column<int>(nullable: false)
-                        .Annotation("MySQL:AutoIncrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Baz_Data = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

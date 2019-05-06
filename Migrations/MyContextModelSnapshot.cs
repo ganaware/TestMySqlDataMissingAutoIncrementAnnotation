@@ -13,7 +13,8 @@ namespace TestMySqlDataMissingAutoIncrementAnnotation.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085");
+                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("TestMySqlDataMissingAutoIncrementAnnotation.Bar", b =>
                 {

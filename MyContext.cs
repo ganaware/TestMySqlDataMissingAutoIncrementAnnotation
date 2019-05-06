@@ -27,7 +27,7 @@ namespace TestMySqlDataMissingAutoIncrementAnnotation {
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             if (!optionsBuilder.IsConfigured) {
-                optionsBuilder.UseMySQL(
+                optionsBuilder.UseMySql(
                     "Host=localhost",
                     o => {
                         o.MigrationsAssembly("TestMySqlDataMissingAutoIncrementAnnotation");
